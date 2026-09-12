@@ -20,18 +20,18 @@ import { getCitizenId } from "./citizen-identity";
 
 export * from "./complaint-model";
 
-/** Format timestamps in the user-facing Delhi/India timezone. */
-export function formatDate(value: string | number | Date): string {
-  const date = value instanceof Date ? value : new Date(value);
-  return new Intl.DateTimeFormat("en-IN", {
-    timeZone: "Asia/Kolkata",
-    year: "numeric",
-    month: "short",
+// Direct named export: this avoids Rolldown failing to resolve formatDate
+// when the module also re-exports the complaint model.
+export function formatDate(ts: number) {
+  return new Date(ts).toLocaleString("en-US", {
     day: "2-digit",
+    month: "short",
+    year: "numeric",
     hour: "2-digit",
     minute: "2-digit",
     hour12: true,
-  }).format(date);
+    timeZone: "Asia/Kolkata",
+  });
 }
 
 const COMPLAINTS_QUERY_KEY = ["complaints"] as const;

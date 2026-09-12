@@ -729,7 +729,7 @@ export const CITIZEN_CONFIRMED_NOTE = "Citizen confirmed the issue is resolved."
 export const CITIZEN_REOPENED_NOTE =
   "Citizen reported the issue is not fixed — complaint reopened for further work.";
 
-export function formatDate(ts: number) {
+export function formatComplaintDate(ts: number) {
   // Pinned locale + hour cycle so SSR and client hydration produce identical text.
   return new Date(ts).toLocaleString("en-US", {
     day: "2-digit",
@@ -738,7 +738,7 @@ export function formatDate(ts: number) {
     hour: "2-digit",
     minute: "2-digit",
     hour12: true,
-    timeZone: "UTC",
+    timeZone: "Asia/Kolkata",
   });
 }
 
