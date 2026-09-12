@@ -738,11 +738,7 @@ export function formatDate(ts: number) {
     hour: "2-digit",
     minute: "2-digit",
     hour12: true,
-<<<<<<< HEAD
-    timeZone: "Asia/Kolkata",
-=======
     timeZone: "UTC",
->>>>>>> 522ed4a4208577e5912657d1aac8145ce30d1dae
   });
 }
 

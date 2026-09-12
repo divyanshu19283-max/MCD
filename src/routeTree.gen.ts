@@ -13,16 +13,6 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as HistoryRouteImport } from './routes/history'
 import { Route as MajorRouteImport } from './routes/major'
 import { Route as MapRouteImport } from './routes/map'
-<<<<<<< HEAD
-import { Route as ReportRouteImport } from './routes/report'
-import { Route as ComplaintIdRouteImport } from './routes/complaint.$id'
-import { Route as MCDRouteImport } from './routes/mcd'
-import { Route as ApiAuthoritiesIndexRouteImport } from './routes/api/authorities/index'
-import { Route as ApiComplaintsIndexRouteImport } from './routes/api/complaints/index'
-import { Route as ApiComplaintsEscalateOverdueRouteImport } from './routes/api/complaints/escalate-overdue'
-import { Route as ApiComplaintsNearbyRouteImport } from './routes/api/complaints/nearby'
-import { Route as ApiComplaintsMajorRouteImport } from './routes/api/complaints/major'
-=======
 import { Route as McdRouteImport } from './routes/mcd'
 import { Route as ReportRouteImport } from './routes/report'
 import { Route as ComplaintIdRouteImport } from './routes/complaint.$id'
@@ -31,7 +21,6 @@ import { Route as ApiComplaintsIndexRouteImport } from './routes/api/complaints/
 import { Route as ApiComplaintsEscalateOverdueRouteImport } from './routes/api/complaints/escalate-overdue'
 import { Route as ApiComplaintsMajorRouteImport } from './routes/api/complaints/major'
 import { Route as ApiComplaintsNearbyRouteImport } from './routes/api/complaints/nearby'
->>>>>>> 522ed4a4208577e5912657d1aac8145ce30d1dae
 import { Route as ApiEvidenceSplatRouteImport } from './routes/api/evidence/$'
 import { Route as ApiEvidenceUploadRouteImport } from './routes/api/evidence/upload'
 import { Route as ApiComplaintsIdIndexRouteImport } from './routes/api/complaints/$id/index'
@@ -59,27 +48,16 @@ const MapRoute = MapRouteImport.update({
   path: '/map',
   getParentRoute: () => rootRouteImport,
 } as any)
-<<<<<<< HEAD
-=======
 const McdRoute = McdRouteImport.update({
   id: '/mcd',
   path: '/mcd',
   getParentRoute: () => rootRouteImport,
 } as any)
->>>>>>> 522ed4a4208577e5912657d1aac8145ce30d1dae
 const ReportRoute = ReportRouteImport.update({
   id: '/report',
   path: '/report',
   getParentRoute: () => rootRouteImport,
 } as any)
-<<<<<<< HEAD
-const MCDRoute = MCDRouteImport.update({
-  id: '/mcd',
-  path: '/mcd',
-  getParentRoute: () => rootRouteImport,
-} as any)
-=======
->>>>>>> 522ed4a4208577e5912657d1aac8145ce30d1dae
 const ComplaintIdRoute = ComplaintIdRouteImport.update({
   id: '/complaint/$id',
   path: '/complaint/$id',
@@ -149,21 +127,12 @@ export interface FileRoutesByFullPath {
   '/history': typeof HistoryRoute
   '/major': typeof MajorRoute
   '/map': typeof MapRoute
-<<<<<<< HEAD
-  '/report': typeof ReportRoute
-  '/mcd': typeof MCDRoute
-  '/complaint/$id': typeof ComplaintIdRoute
-  '/api/complaints/escalate-overdue': typeof ApiComplaintsEscalateOverdueRoute
-  '/api/complaints/nearby': typeof ApiComplaintsNearbyRoute
-  '/api/complaints/major': typeof ApiComplaintsMajorRoute
-=======
   '/mcd': typeof McdRoute
   '/report': typeof ReportRoute
   '/complaint/$id': typeof ComplaintIdRoute
   '/api/complaints/escalate-overdue': typeof ApiComplaintsEscalateOverdueRoute
   '/api/complaints/major': typeof ApiComplaintsMajorRoute
   '/api/complaints/nearby': typeof ApiComplaintsNearbyRoute
->>>>>>> 522ed4a4208577e5912657d1aac8145ce30d1dae
   '/api/evidence/$': typeof ApiEvidenceSplatRoute
   '/api/evidence/upload': typeof ApiEvidenceUploadRoute
   '/api/authorities/': typeof ApiAuthoritiesIndexRoute
@@ -178,21 +147,12 @@ export interface FileRoutesByTo {
   '/history': typeof HistoryRoute
   '/major': typeof MajorRoute
   '/map': typeof MapRoute
-<<<<<<< HEAD
-  '/report': typeof ReportRoute
-  '/mcd': typeof MCDRoute
-  '/complaint/$id': typeof ComplaintIdRoute
-  '/api/complaints/escalate-overdue': typeof ApiComplaintsEscalateOverdueRoute
-  '/api/complaints/nearby': typeof ApiComplaintsNearbyRoute
-  '/api/complaints/major': typeof ApiComplaintsMajorRoute
-=======
   '/mcd': typeof McdRoute
   '/report': typeof ReportRoute
   '/complaint/$id': typeof ComplaintIdRoute
   '/api/complaints/escalate-overdue': typeof ApiComplaintsEscalateOverdueRoute
   '/api/complaints/major': typeof ApiComplaintsMajorRoute
   '/api/complaints/nearby': typeof ApiComplaintsNearbyRoute
->>>>>>> 522ed4a4208577e5912657d1aac8145ce30d1dae
   '/api/evidence/$': typeof ApiEvidenceSplatRoute
   '/api/evidence/upload': typeof ApiEvidenceUploadRoute
   '/api/authorities': typeof ApiAuthoritiesIndexRoute
@@ -208,21 +168,12 @@ export interface FileRoutesById {
   '/history': typeof HistoryRoute
   '/major': typeof MajorRoute
   '/map': typeof MapRoute
-<<<<<<< HEAD
-  '/report': typeof ReportRoute
-  '/mcd': typeof MCDRoute
-  '/complaint/$id': typeof ComplaintIdRoute
-  '/api/complaints/escalate-overdue': typeof ApiComplaintsEscalateOverdueRoute
-  '/api/complaints/nearby': typeof ApiComplaintsNearbyRoute
-  '/api/complaints/major': typeof ApiComplaintsMajorRoute
-=======
   '/mcd': typeof McdRoute
   '/report': typeof ReportRoute
   '/complaint/$id': typeof ComplaintIdRoute
   '/api/complaints/escalate-overdue': typeof ApiComplaintsEscalateOverdueRoute
   '/api/complaints/major': typeof ApiComplaintsMajorRoute
   '/api/complaints/nearby': typeof ApiComplaintsNearbyRoute
->>>>>>> 522ed4a4208577e5912657d1aac8145ce30d1dae
   '/api/evidence/$': typeof ApiEvidenceSplatRoute
   '/api/evidence/upload': typeof ApiEvidenceUploadRoute
   '/api/authorities/': typeof ApiAuthoritiesIndexRoute
@@ -237,15 +188,6 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/history'
-<<<<<<< HEAD
-    | '/map'
-    | '/report'
-    | '/mcd'
-    | '/complaint/$id'
-    | '/api/complaints/escalate-overdue'
-    | '/api/complaints/nearby'
-    | '/api/complaints/major'
-=======
     | '/major'
     | '/map'
     | '/mcd'
@@ -254,7 +196,6 @@ export interface FileRouteTypes {
     | '/api/complaints/escalate-overdue'
     | '/api/complaints/major'
     | '/api/complaints/nearby'
->>>>>>> 522ed4a4208577e5912657d1aac8145ce30d1dae
     | '/api/evidence/$'
     | '/api/evidence/upload'
     | '/api/authorities/'
@@ -267,15 +208,6 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/history'
-<<<<<<< HEAD
-    | '/map'
-    | '/report'
-    | '/mcd'
-    | '/complaint/$id'
-    | '/api/complaints/escalate-overdue'
-    | '/api/complaints/nearby'
-    | '/api/complaints/major'
-=======
     | '/major'
     | '/map'
     | '/mcd'
@@ -284,7 +216,6 @@ export interface FileRouteTypes {
     | '/api/complaints/escalate-overdue'
     | '/api/complaints/major'
     | '/api/complaints/nearby'
->>>>>>> 522ed4a4208577e5912657d1aac8145ce30d1dae
     | '/api/evidence/$'
     | '/api/evidence/upload'
     | '/api/authorities'
@@ -297,15 +228,6 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/history'
-<<<<<<< HEAD
-    | '/map'
-    | '/report'
-    | '/mcd'
-    | '/complaint/$id'
-    | '/api/complaints/escalate-overdue'
-    | '/api/complaints/nearby'
-    | '/api/complaints/major'
-=======
     | '/major'
     | '/map'
     | '/mcd'
@@ -314,7 +236,6 @@ export interface FileRouteTypes {
     | '/api/complaints/escalate-overdue'
     | '/api/complaints/major'
     | '/api/complaints/nearby'
->>>>>>> 522ed4a4208577e5912657d1aac8145ce30d1dae
     | '/api/evidence/$'
     | '/api/evidence/upload'
     | '/api/authorities/'
@@ -330,21 +251,12 @@ export interface RootRouteChildren {
   HistoryRoute: typeof HistoryRoute
   MajorRoute: typeof MajorRoute
   MapRoute: typeof MapRoute
-<<<<<<< HEAD
-  ReportRoute: typeof ReportRoute
-  ComplaintIdRoute: typeof ComplaintIdRoute
-  MCDRoute: typeof MCDRoute
-  ApiComplaintsEscalateOverdueRoute: typeof ApiComplaintsEscalateOverdueRoute
-  ApiComplaintsNearbyRoute: typeof ApiComplaintsNearbyRoute
-  ApiComplaintsMajorRoute: typeof ApiComplaintsMajorRoute
-=======
   McdRoute: typeof McdRoute
   ReportRoute: typeof ReportRoute
   ComplaintIdRoute: typeof ComplaintIdRoute
   ApiComplaintsEscalateOverdueRoute: typeof ApiComplaintsEscalateOverdueRoute
   ApiComplaintsMajorRoute: typeof ApiComplaintsMajorRoute
   ApiComplaintsNearbyRoute: typeof ApiComplaintsNearbyRoute
->>>>>>> 522ed4a4208577e5912657d1aac8145ce30d1dae
   ApiEvidenceSplatRoute: typeof ApiEvidenceSplatRoute
   ApiEvidenceUploadRoute: typeof ApiEvidenceUploadRoute
   ApiAuthoritiesIndexRoute: typeof ApiAuthoritiesIndexRoute
@@ -385,8 +297,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MapRouteImport
       parentRoute: typeof rootRouteImport
     }
-<<<<<<< HEAD
-=======
     '/mcd': {
       id: '/mcd'
       path: '/mcd'
@@ -394,7 +304,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof McdRouteImport
       parentRoute: typeof rootRouteImport
     }
->>>>>>> 522ed4a4208577e5912657d1aac8145ce30d1dae
     '/report': {
       id: '/report'
       path: '/report'
@@ -402,16 +311,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ReportRouteImport
       parentRoute: typeof rootRouteImport
     }
-<<<<<<< HEAD
-    '/mcd': {
-      id: '/mcd'
-      path: '/mcd'
-      fullPath: '/mcd'
-      preLoaderRoute: typeof MCDRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-=======
->>>>>>> 522ed4a4208577e5912657d1aac8145ce30d1dae
     '/complaint/$id': {
       id: '/complaint/$id'
       path: '/complaint/$id'
@@ -440,16 +339,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiComplaintsEscalateOverdueRouteImport
       parentRoute: typeof rootRouteImport
     }
-<<<<<<< HEAD
-    '/api/complaints/nearby': {
-      id: '/api/complaints/nearby'
-      path: '/api/complaints/nearby'
-      fullPath: '/api/complaints/nearby'
-      preLoaderRoute: typeof ApiComplaintsNearbyRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-=======
->>>>>>> 522ed4a4208577e5912657d1aac8145ce30d1dae
     '/api/complaints/major': {
       id: '/api/complaints/major'
       path: '/api/complaints/major'
@@ -457,8 +346,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiComplaintsMajorRouteImport
       parentRoute: typeof rootRouteImport
     }
-<<<<<<< HEAD
-=======
     '/api/complaints/nearby': {
       id: '/api/complaints/nearby'
       path: '/api/complaints/nearby'
@@ -466,7 +353,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiComplaintsNearbyRouteImport
       parentRoute: typeof rootRouteImport
     }
->>>>>>> 522ed4a4208577e5912657d1aac8145ce30d1dae
     '/api/evidence/$': {
       id: '/api/evidence/$'
       path: '/api/evidence/$'
@@ -517,21 +403,12 @@ const rootRouteChildren: RootRouteChildren = {
   HistoryRoute: HistoryRoute,
   MajorRoute: MajorRoute,
   MapRoute: MapRoute,
-<<<<<<< HEAD
-  ReportRoute: ReportRoute,
-  ComplaintIdRoute: ComplaintIdRoute,
-  MCDRoute: MCDRoute,
-  ApiComplaintsEscalateOverdueRoute: ApiComplaintsEscalateOverdueRoute,
-  ApiComplaintsNearbyRoute: ApiComplaintsNearbyRoute,
-  ApiComplaintsMajorRoute: ApiComplaintsMajorRoute,
-=======
   McdRoute: McdRoute,
   ReportRoute: ReportRoute,
   ComplaintIdRoute: ComplaintIdRoute,
   ApiComplaintsEscalateOverdueRoute: ApiComplaintsEscalateOverdueRoute,
   ApiComplaintsMajorRoute: ApiComplaintsMajorRoute,
   ApiComplaintsNearbyRoute: ApiComplaintsNearbyRoute,
->>>>>>> 522ed4a4208577e5912657d1aac8145ce30d1dae
   ApiEvidenceSplatRoute: ApiEvidenceSplatRoute,
   ApiEvidenceUploadRoute: ApiEvidenceUploadRoute,
   ApiAuthoritiesIndexRoute: ApiAuthoritiesIndexRoute,

@@ -19,11 +19,6 @@ import type { Complaint, HandoffMethod, IssueType } from "./complaint-model";
 import { getCitizenId } from "./citizen-identity";
 
 export * from "./complaint-model";
-<<<<<<< HEAD
-// Explicit re-export keeps Vite/Rolldown from missing this named export during production builds.
-export { formatDate } from "./complaint-model";
-=======
->>>>>>> 522ed4a4208577e5912657d1aac8145ce30d1dae
 
 const COMPLAINTS_QUERY_KEY = ["complaints"] as const;
 
