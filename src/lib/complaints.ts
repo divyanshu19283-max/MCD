@@ -19,8 +19,20 @@ import type { Complaint, HandoffMethod, IssueType } from "./complaint-model";
 import { getCitizenId } from "./citizen-identity";
 
 export * from "./complaint-model";
-// Explicit re-export keeps Vite/Rolldown from missing this named export during production builds.
-export { formatDate } from "./complaint-model";
+
+/** Format timestamps in the user-facing Delhi/India timezone. */
+export function formatDate(value: string | number | Date): string {
+  const date = value instanceof Date ? value : new Date(value);
+  return new Intl.DateTimeFormat("en-IN", {
+    timeZone: "Asia/Kolkata",
+    year: "numeric",
+    month: "short",
+    day: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: true,
+  }).format(date);
+}
 
 const COMPLAINTS_QUERY_KEY = ["complaints"] as const;
 
