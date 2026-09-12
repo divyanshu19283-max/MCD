@@ -1,12 +1,11 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import {
+  formatDate,
   listComplaintsFn,
   STATUSES,
   updateMcdComplaintStatus,
   type Complaint,
 } from "@/lib/complaints";
-import { formatDate } from "@/lib/complaint-model";
 
 export const Route = createFileRoute("/mcd")({ component: MCDPage });
 
