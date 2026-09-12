@@ -15,6 +15,10 @@ import {
   recordOfficialReferenceFn,
   reopenComplaintFn,
 } from "./complaints.functions";
+
+// Public re-exports used by route modules and other UI consumers.
+export { listComplaintsFn };
+
 import type { Complaint, HandoffMethod, IssueType } from "./complaint-model";
 import { getCitizenId } from "./citizen-identity";
 
