@@ -1,0 +1,367 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: "Plus Jakarta Sans", "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --radius-sm: calc(var(--radius) - 6px);
+  --radius-md: calc(var(--radius) - 4px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 2px);
+  --radius-2xl: calc(var(--radius) + 4px);
+  --radius-3xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --shadow-glow: 0 0 0 1px oklch(0.84 0.18 96 / 0.35), 0 12px 28px -14px oklch(0.84 0.18 96 / 0.45);
+}
+
+:root {
+  --radius: 0.75rem; /* 12px base; xl = 14px, 2xl = 16px */
+
+  /* 8px spacing system */
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2rem;
+
+  /* Sophisticated light-first civic-tech palette — off-white surfaces,
+     deep charcoal text, and a single strong electric-yellow brand accent.
+     Gradients and heavy glows are intentionally avoided in favour of
+     crisp borders and soft neutral shadows. */
+  --background: oklch(0.985 0.002 95);
+  --foreground: oklch(0.22 0.012 260);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.22 0.012 260);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.22 0.012 260);
+  --primary: oklch(0.84 0.18 96);
+  --primary-foreground: oklch(0.2 0.02 260);
+  --secondary: oklch(0.955 0.003 260);
+  --secondary-foreground: oklch(0.28 0.012 260);
+  --muted: oklch(0.96 0.003 260);
+  --muted-foreground: oklch(0.5 0.012 260);
+  --accent: oklch(0.55 0.13 235);
+  --accent-foreground: oklch(0.98 0.002 240);
+  --success: oklch(0.6 0.13 155);
+  --success-foreground: oklch(0.98 0.002 240);
+  --destructive: oklch(0.58 0.19 25);
+  --destructive-foreground: oklch(0.98 0.002 240);
+  --border: oklch(0 0 0 / 0.09);
+  --input: oklch(0 0 0 / 0.12);
+  --ring: oklch(0.75 0.16 90);
+  --sidebar: oklch(0.99 0.002 95);
+  --sidebar-foreground: oklch(0.22 0.012 260);
+  --sidebar-primary: oklch(0.84 0.18 96);
+  --sidebar-primary-foreground: oklch(0.2 0.02 260);
+  --sidebar-accent: oklch(0.955 0.003 260);
+  --sidebar-accent-foreground: oklch(0.28 0.012 260);
+  --sidebar-border: oklch(0 0 0 / 0.08);
+  --sidebar-ring: oklch(0.75 0.16 90);
+}
+
+/* Dark mode kept for forward-compatibility if a theme toggle is ever
+   added, but the app currently always renders the light palette above. */
+.dark {
+  color-scheme: dark;
+  --background: oklch(0.16 0.018 258);
+  --foreground: oklch(0.96 0.005 240);
+  --card: oklch(0.2 0.022 258);
+  --card-foreground: oklch(0.96 0.005 240);
+  --popover: oklch(0.2 0.022 258);
+  --popover-foreground: oklch(0.96 0.005 240);
+  --primary: oklch(0.84 0.18 96);
+  --primary-foreground: oklch(0.18 0.02 258);
+  --secondary: oklch(0.27 0.02 258);
+  --secondary-foreground: oklch(0.94 0.005 240);
+  --muted: oklch(0.25 0.02 258);
+  --muted-foreground: oklch(0.68 0.015 250);
+  --accent: oklch(0.65 0.12 230);
+  --accent-foreground: oklch(0.15 0.02 258);
+  --success: oklch(0.7 0.14 155);
+  --success-foreground: oklch(0.15 0.03 160);
+  --destructive: oklch(0.62 0.2 25);
+  --destructive-foreground: oklch(0.97 0.01 240);
+  --border: oklch(1 0 0 / 0.08);
+  --input: oklch(1 0 0 / 0.1);
+  --ring: oklch(0.84 0.18 96);
+  --sidebar: oklch(0.14 0.018 258);
+  --sidebar-foreground: oklch(0.96 0.005 240);
+  --sidebar-primary: oklch(0.84 0.18 96);
+  --sidebar-primary-foreground: oklch(0.18 0.02 258);
+  --sidebar-accent: oklch(0.25 0.02 258);
+  --sidebar-accent-foreground: oklch(0.94 0.005 240);
+  --sidebar-border: oklch(1 0 0 / 0.07);
+  --sidebar-ring: oklch(0.84 0.18 96);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-background);
+    /* A single, very restrained accent wash — not a gradient panel. */
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    font-feature-settings: "ss01" 1, "cv01" 1;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+
+  h1 {
+    line-height: 1.15;
+  }
+
+  ::selection {
+    background: oklch(0.84 0.18 96 / 0.45);
+    color: var(--color-foreground);
+  }
+
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: oklch(0 0 0 / 0.18) transparent;
+  }
+  *::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  *::-webkit-scrollbar-thumb {
+    background: oklch(0 0 0 / 0.15);
+    border-radius: 999px;
+  }
+  *::-webkit-scrollbar-thumb:hover {
+    background: oklch(0 0 0 / 0.25);
+  }
+}
+
+/* Core elevated-surface primitive used across the app: a flat white
+   card with a crisp hairline border and a soft, neutral shadow. No
+   gradient fill — definition comes from the border and shadow only. */
+@utility panel {
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-2xl);
+  box-shadow: 0 1px 2px 0 oklch(0 0 0 / 0.04), 0 8px 20px -16px oklch(0 0 0 / 0.16);
+}
+
+@utility panel-flat {
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+@utility glass {
+  background: oklch(1 0 0 / 0.78);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+}
+
+@utility text-gradient {
+  color: var(--color-foreground);
+}
+
+/* Leaflet marker pins */
+.map-pin {
+  display: block;
+  width: 16px;
+  height: 16px;
+  border-radius: 9999px;
+  border: 2.5px solid oklch(1 0 0);
+  box-shadow:
+    0 0 0 1px oklch(0 0 0 / 0.12),
+    0 3px 8px -1px oklch(0 0 0 / 0.35);
+  background: var(--muted-foreground);
+}
+.map-pin--reported {
+  background: oklch(0.6 0.01 260);
+}
+.map-pin--classified {
+  background: oklch(0.62 0.13 210);
+}
+.map-pin--forwarded {
+  background: oklch(0.62 0.15 300);
+}
+.map-pin--assigned {
+  background: oklch(0.55 0.13 235);
+}
+.map-pin--progress {
+  background: oklch(0.78 0.17 90);
+}
+.map-pin--resolved {
+  background: oklch(0.6 0.13 155);
+}
+.map-pin--picked {
+  background: oklch(0.58 0.19 25);
+  animation: pulse 1.6s ease-in-out infinite;
+}
+.map-pin-wrap {
+  transition: filter 0.15s ease;
+}
+.map-pin-wrap .map-pin {
+  transition: transform 0.15s cubic-bezier(0.34, 1.56, 0.64, 1);
+  cursor: pointer;
+}
+.map-pin-wrap:hover .map-pin {
+  transform: scale(1.4);
+}
+.leaflet-container {
+  background: oklch(0.96 0.003 260);
+  font-family: var(--font-sans);
+}
+.leaflet-container .leaflet-tile-pane {
+  z-index: 200;
+}
+.leaflet-container .leaflet-overlay-pane,
+.leaflet-container .leaflet-shadow-pane,
+.leaflet-container .leaflet-marker-pane,
+.leaflet-container .leaflet-tooltip-pane,
+.leaflet-container .leaflet-popup-pane {
+  z-index: 400;
+}
+.leaflet-container .leaflet-tile {
+  max-width: none !important;
+}
+.leaflet-control-zoom a {
+  background: var(--color-card) !important;
+  color: var(--color-foreground) !important;
+  border-color: var(--color-border) !important;
+}
+.leaflet-control-attribution {
+  background: oklch(1 0 0 / 0.8) !important;
+  color: var(--color-muted-foreground) !important;
+}
+.map-pin-wrap {
+  animation: pin-pop 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+@keyframes pin-pop {
+  from {
+    transform: scale(0.3);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Respect reduced-motion preferences: strip non-essential animation/transition */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@keyframes pulse-soft {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 oklch(0.7 0.16 90 / 0.45);
+  }
+  50% {
+    box-shadow: 0 0 0 6px oklch(0.7 0.16 90 / 0);
+  }
+}
+.pulse-soft {
+  animation: pulse-soft 2s ease-in-out infinite;
+}
+
+@keyframes check-pop {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.15);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.check-pop {
+  animation: check-pop 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+@keyframes line-grow {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+.line-grow {
+  transform-origin: top;
+  animation: line-grow 0.5s ease-out both;
+}
+
+.skeleton {
+  position: relative;
+  overflow: hidden;
+  background: var(--color-secondary);
+}
+.skeleton::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  background-image: linear-gradient(
+    90deg,
+    transparent,
+    oklch(0 0 0 / 0.05),
+    transparent
+  );
+  animation: shimmer 1.5s infinite;
+}
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
